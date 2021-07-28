@@ -1,0 +1,40 @@
+!<!DOCTYPE html>
+<html>
+<head>
+	<title>编译测试文档</title>
+	<script src="./observe.js"></script>
+	<script src="./watch.js"></script>
+	<script src="./compiler.js"></script>
+	<script src="./index.js"></script>
+</head>
+<body>
+    <div id="app">
+    	<input type="text" v-model="item" placeholder="请输入你的文档">
+    	<p v-on:click="handle">该用户已在线。。</p>
+    	<ul>
+    		<li>{{item}}</li>
+    		<li>{{item}}</li>
+    		<li>{{item}}</li>
+    	</ul>
+    	
+    </div>
+</body>
+<script>
+    var vm=new Vue({
+    	el:document.getElementById("app"),
+    	data:{
+    		item:"123",
+    		name:"json"
+    	},
+    	methods:{
+    		handle:function(){
+    			console.log("事件处理成功")
+    		}
+    	}
+    })
+    vm.item="blosm"
+    console.log(vm)
+	 // var el=document.getElementById("app")
+	 // new Compiler(el)
+</script>
+</html>
